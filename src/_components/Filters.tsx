@@ -1,5 +1,6 @@
 "use client";
 
+import { BsSearch } from "react-icons/bs";
 import type { FiltersProps } from "@/customTypes/filters";
 
 export default function Filters({ genres, filters, onFiltersChange, onSearchChange, resetFilters }: FiltersProps) {
@@ -27,12 +28,15 @@ export default function Filters({ genres, filters, onFiltersChange, onSearchChan
           </li>
         ))}
       </ul>
-      <input
-        type="text"
-        placeholder="Search"
-        className="bg-dark-1 text-gray-light text-lg w-full lg:w-[200px] h-[38px] px-3 rounded-full order-1 lg:order-2"
-        onChange={onSearchChange}
-      />
+      <div className="relative order-1 lg:order-2">
+        <BsSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-mid text-lg" />
+        <input
+          type="text"
+          placeholder="Search"
+          className="bg-dark-1 text-gray-light text-lg w-full lg:w-[200px] h-[38px] pl-10 pr-3 rounded-full"
+          onChange={onSearchChange}
+        />
+      </div>
     </div>
   );
 }
